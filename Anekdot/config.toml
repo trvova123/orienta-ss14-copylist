@@ -112,7 +112,7 @@ server_url = ""
 # server = https://central.spacestation14.io/auth/
 
 [tts]
-api_url="http://5.79.209.219:5000/tts"
+api_url="http://5.79.209.255:5000/tts"
 api_token="test"
 enabled=true
 
