@@ -111,8 +111,8 @@
         - map: [ "enum.EdgeLayer.West" ]
           state: rock_west
     - type: OreVein
-    oreChance: 0.2
-    oreRarityPrototypeId: RandomOreDistributionStandard
+      oreChance: 0.2
+      oreRarityPrototypeId: RandomOreDistributionStandard
 
 # Ore veins
 - type: entity

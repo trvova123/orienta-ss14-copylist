@@ -23,10 +23,6 @@
   text: station-goal-zoo
 
 - type: stationGoal
-  id: StationGoalZoo
-  text: station-goal-zoo
-
-- type: stationGoal
   id: StationGoalRecruit
   text: station-goal-recruit
 
