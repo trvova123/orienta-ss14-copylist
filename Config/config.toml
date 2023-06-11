@@ -1,0 +1,75 @@
+[server]
+rules_header = "Правила сервера Orienta"
+
+[rules]
+time = 30
+
+[infolinks]
+discord = "https://discord.gg/rYM77mAxkN"
+wiki = "https://wiki.orientacorp.ru"
+
+[log]
+path = "logs"
+format = "log_%(date)s-%(time)s.txt"
+level = 1
+enabled = false
+
+[net]
+tickrate = 30
+port = 1212
+bindto = "::,0.0.0.0"
+max_connections = 256
+# upnp = true
+
+[status]
+enabled = true
+# bind = "*:1212"
+# connectaddress = "udp://localhost:1212"
+
+[game]
+lobbyenabled = true
+hostname = "[RU][MRP][TTS]⚛ Orienta | ⚔️ Amadis"
+desc = "Активно развивающийся проект. Набираем персонал! Имеется ТТС, заходи и играй с нами!"
+maxplayers = 65
+peaceful_end = false
+
+[console]
+loginlocal = true
+
+[hub]
+advertise = true
+tags = "lang:ru,region:eu_e,rp:med"
+server_url = ""
+
+[build]
+# engine_version = "0.7.6"
+# fork_id = "abacusstation"
+# version = "Example1"
+# download_url = "http://example.com/compass.zip"
+
+# build = "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+
+[auth]
+# Authentication (accounts):
+# 0 = Optional, 1 = Required, 2 = Disabled
+# Presumably do require authentication on any public server.
+# mode = 0
+
+# allowlocal = true
+
+# server = https://central.spacestation14.io/auth/
+
+[tts]
+api_url="http://5.79.209.255:5000/tts"
+api_token="test"
+enabled=true
+
+[metrics]
+enabled = true
+host = "localhost"
+
+port = 44880
+
+[discord]
+round_webhook = "https://discord.com/api/webhooks/1100327424002101260/UBJs7l6Ztr4mvcw_bLYFv1nklnzLyd-imfpNkrhfqh1YSZDUrq5Se6G9ibAoYk6z57vA"
+round_start_only = false

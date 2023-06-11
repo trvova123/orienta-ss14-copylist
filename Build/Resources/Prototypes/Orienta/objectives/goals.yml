@@ -1,0 +1,7 @@
+- type: stationGoal
+  id: StationGoalRecruit
+  text: station-goal-recruit
+
+- type: stationGoal
+  id: StationGoalRipley
+  text: station-goal-ripley
