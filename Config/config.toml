@@ -28,7 +28,7 @@ enabled = true
 
 [game]
 lobbyenabled = true
-hostname = "[RU][MRP][TTS]⚛ Orienta | ⚔️ Amadis"
+hostname = "█████ RUS █  O R I E N T A  █ MRP █████""
 desc = "Активно развивающийся проект. Набираем персонал! Имеется ТТС, заходи и играй с нами!"
 maxplayers = 65
 peaceful_end = false
