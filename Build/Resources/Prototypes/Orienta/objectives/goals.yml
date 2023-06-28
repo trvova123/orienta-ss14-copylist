@@ -1,0 +1,19 @@
+- type: stationGoal
+  id: StationGoalRecruit
+  text: station-goal-recruit
+
+- type: stationGoal
+  id: StationGoalRipley
+  text: station-goal-ripley
+
+- type: stationGoal
+  id: StationGoalСorgi
+  text: station-goal-corgi
+
+- type: stationGoal
+  id: StationGoalGrenadeTest
+  text: station-goal-grenade-test
+
+- type: stationGoal
+  id: StationGoalHugeAME
+  text: station-goal-huge-ame

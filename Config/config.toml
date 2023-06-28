@@ -28,7 +28,7 @@ enabled = true
 
 [game]
 lobbyenabled = true
-hostname = "█████ RUS █  O R I E N T A  █ MRP █████""
+hostname = "█████ RUS █  O R I E N T A  █ MRP █████"
 desc = "Активно развивающийся проект. Набираем персонал! Имеется ТТС, заходи и играй с нами!"
 maxplayers = 65
 peaceful_end = false
@@ -65,10 +65,9 @@ api_token="test"
 enabled=true
 
 [metrics]
-enabled = true
 host = "localhost"
-
 port = 44880
+enabled = true
 
 [discord]
 round_webhook = "https://discord.com/api/webhooks/1100327424002101260/UBJs7l6Ztr4mvcw_bLYFv1nklnzLyd-imfpNkrhfqh1YSZDUrq5Se6G9ibAoYk6z57vA"
