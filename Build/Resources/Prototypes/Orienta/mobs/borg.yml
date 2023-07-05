@@ -1,0 +1,518 @@
+
+
+
+# Engineering borg (clarke)
+
+
+
+- type: entity
+  name: К.Л.А.Р.К
+  suffix: борг
+  id: MobClarkeBorg
+  description: Не бойся, тут нигде нету некроморфов.
+  components:
+  - type: StandingState
+  - type: Climbing
+  - type: Buckle
+  - type: DoAfter
+  - type: Examiner
+  - type: Hands
+    showInHands: false
+  - type: GhostRole
+    makeSentient: true
+    name: К.Л.А.Р.К
+    description: Инженерный борг, законы борга 1) Служить человеку и исполнять все его приказы если это возможно. 2) Не вредить человеку любыми или коствеными способами. 3) Спасать жизни людей если те оказались в опастности, но лишний не критический раз не надо ведь производство борга обходиться очень дорого
+  - type: InnateTool
+    tools:
+      - id: ClothingBackpackDuffelClarkeBorgFilled
+      - id: NetworkConfigurator
+      - id: Omnitool
+      - id: WelderExperimental
+      - id: JetpackBlueFilled
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: LagCompensation
+  - type: Reactive
+    groups:
+      Acidic: [Touch]
+  - type: Clickable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Access
+    groups:
+    - AllAccess
+  - type: Bloodstream
+    bloodReagent: Oil
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 3
+  - type: Inventory
+    speciesId: clarke
+    templateId: clarke
+  - type: InventorySlots
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: clarke
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: MovedByPressure
+  - type: Physics
+    bodyType: KinematicController # Same for all inheritors
+  - type: DrawableSolution
+    solution: bloodstream
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - SlowedDown
+    - Stutter
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Repairable
+    fuelcost: 15
+    doAfterDelay: 8
+  - type: Pullable
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - ShoesRequiredStepTriggerImmune
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      120: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: clarke
+      Critical:
+        Base: clarke-broken
+      Dead:
+        Base: clarke-broken
+  - type: Flashable
+  - type: NoSlip
+  - type: Stamina
+    excess: 120
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:TriggerBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Input
+    context: "human"
+  - type: InputMover
+  - type: MobMover
+  - type: Body
+    prototype: Drone
+  - type: CombatMode
+    combatToggleAction:
+      enabled: false
+      autoPopulate: false
+      name: action-name-combat
+  - type: Puller
+    needsHands: true
+  - type: Actions
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    enabled: false
+    radius: 3.5
+    softness: 1
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+
+
+# Operative borg (syndicate)
+
+
+
+- type: entity
+  name: М.А.У.Л.Е.Р
+  suffix: борг
+  id: MobMaulerBorg
+  description: У тебя нету шансов против него.
+  components:
+  - type: StandingState
+  - type: Climbing
+  - type: Buckle
+  - type: DoAfter
+  - type: Examiner
+  - type: Hands
+    showInHands: false
+  - type: GhostRole
+    makeSentient: true
+    name: М.А.У.Л.Е.Р
+    description: Вы борг ядерных оперативников и должны убивать, законы борга 1) Служить синдикату и исполнять все приказы. 2) Уничтожать всё что не связано с синдикатом. 3) Спасать жизни оперативников если те оказались в опастности, но лишний не критический раз не надо ведь производство борга обходиться очень дорого.
+  - type: InnateTool
+    tools:
+      - id: ClothingBackpackDuffelMaulerBorgFilled
+      - id: SyndicateJawsOfLife
+      - id: WeaponLightMachineGunL6
+      - id: WeaponAntiqueLaser
+      - id: JetpackBlackFilled
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: LagCompensation
+  - type: Reactive
+    groups:
+      Acidic: [Touch]
+  - type: Clickable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Bloodstream
+    bloodReagent: Oil
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3
+    baseSprintSpeed : 3
+  - type: Inventory
+    speciesId: mauler
+    templateId: mauler
+  - type: InventorySlots
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: mauler
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Faction
+    factions:
+    - Syndicate
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: MovedByPressure
+  - type: Physics
+    bodyType: KinematicController # Same for all inheritors
+  - type: DrawableSolution
+    solution: bloodstream
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - SlowedDown
+    - Stutter
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Repairable
+    fuelcost: 15
+    doAfterDelay: 8
+  - type: Pullable
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - ShoesRequiredStepTriggerImmune
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      300: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mauler
+      Critical:
+        Base: mauler-broken
+      Dead:
+        Base: mauler-broken
+  - type: Flashable
+  - type: NoSlip
+  - type: Stamina
+    excess: 240
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:TriggerBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Input
+    context: "human"
+  - type: InputMover
+  - type: MobMover
+  - type: Body
+    prototype: Drone
+  - type: CombatMode
+  - type: Puller
+    needsHands: true
+  - type: Actions
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    enabled: false
+    radius: 5
+    softness: 1
+    color: "#FF0000"
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: GuideHelp
+    guides:
+    - Robotics
+
+
+
+# Medical borg (odysseus)
+
+
+
+- type: entity
+  name: О.Д.И.С.С.Е.Й
+  suffix: борг
+  id: MobOdysseusBorg
+  description: Он тут для спасения твоей жизни (но не точно).
+  components:
+  - type: StandingState
+  - type: Climbing
+  - type: Buckle
+  - type: DoAfter
+  - type: Examiner
+  - type: Hands
+    showInHands: false
+  - type: GhostRole
+    makeSentient: true
+    name: О.Д.И.С.С.Е.Й
+    description: Медицинский борг, законы борга 1) Служить человеку и исполнять все его приказы если это возможно. 2) Не вредить человеку любыми или коствеными способами. 3) Спасать жизни людей если те оказались в опастности, но лишний не критический раз не надо ведь производство борга обходиться очень дорого
+  - type: InnateTool
+    tools:
+      - id: ClothingBackpackDuffelOdysseusBorgFilled
+      - id: Crowbar
+      - id: Hypospray
+      - id: HandheldHealthAnalyzer
+  - type: UserInterface
+    interfaces:
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
+  - type: LagCompensation
+  - type: Reactive
+    groups:
+      Acidic: [Touch]
+  - type: Clickable
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Access
+    groups:
+    - AllAccess
+  - type: Bloodstream
+    bloodReagent: Oil
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 5
+    baseSprintSpeed : 5
+  - type: Inventory
+    speciesId: odysseus
+    templateId: odysseus
+  - type: InventorySlots
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    netsync: false
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: odysseus
+      sprite: Objects/Specific/Mech/mecha.rsi
+  - type: Faction
+    factions:
+    - NanoTrasen
+  - type: HealthExaminable
+    examinableTypes:
+    - Blunt
+    - Slash
+    - Piercing
+    - Heat
+    - Shock
+  - type: MovedByPressure
+  - type: Physics
+    bodyType: KinematicController # Same for all inheritors
+  - type: DrawableSolution
+    solution: bloodstream
+  - type: StatusEffects
+    allowed:
+    - Stun
+    - SlowedDown
+    - Stutter
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: Repairable
+    fuelcost: 15
+    doAfterDelay: 8
+  - type: Pullable
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - ShoesRequiredStepTriggerImmune
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: odysseus
+      Critical:
+        Base: odysseus-broken
+      Dead:
+        Base: odysseus-broken
+  - type: Flashable
+  - type: NoSlip
+  - type: Stamina
+    excess: 120
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:TriggerBehavior
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Input
+    context: "human"
+  - type: InputMover
+  - type: MobMover
+  - type: Body
+    prototype: Drone
+  - type: CombatMode
+    combatToggleAction:
+      enabled: false
+      autoPopulate: false
+      name: action-name-combat
+  - type: Puller
+    needsHands: true
+  - type: Actions
+  - type: UnpoweredFlashlight
+    toggleAction:
+      name: action-name-toggle-light
+      description: action-description-toggle-light
+      icon: { sprite: Objects/Tools/flashlight.rsi, state: flashlight }
+      iconOn: Objects/Tools/flashlight.rsi/flashlight-on.png
+      event: !type:ToggleActionEvent
+  - type: PointLight
+    enabled: false
+    radius: 3.5
+    softness: 1
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+  - type: GuideHelp
+    guides:
+    - Robotics

@@ -1,0 +1,36 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelEngineering
+  id: ClothingBackpackDuffelClarkeBorgFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadsetCommand
+      - id: SheetSteel
+      - id: SheetGlass
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelSyndicate
+  id: ClothingBackpackDuffelMaulerBorgFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadsetAltSyndicate
+      - id: MagazineLightRifleBox
+      - id: MagazineLightRifleBox
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackDuffelMedical
+  id: ClothingBackpackDuffelOdysseusBorgFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadsetCommand
+      - id: EmergencyRollerBedSpawnFolded
+      - id: MedkitFilled
+      - id: SyringeTranexamicAcid
+      - id: Syringe
+      - id: EpinephrineChemistryBottle
+      - id: EpinephrineChemistryBottle
